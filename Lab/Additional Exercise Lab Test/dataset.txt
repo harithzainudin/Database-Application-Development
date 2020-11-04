@@ -1,0 +1,104 @@
+--If the tables are exist then drop them
+drop table StudentProject;
+drop table Student;
+drop table Project;
+drop table Advisor;
+
+--Create Advisor table
+CREATE TABLE Advisor
+(
+       ad_id varchar2(6) PRIMARY KEY,
+       ad_name varchar2(40) 
+);
+
+--Create Student table
+CREATE TABLE Student
+ (
+       st_no varchar2(5) PRIMARY KEY,
+       st_name varchar2(10),
+       st_dob date,
+       st_enrol date,
+       st_cgpa number,
+       st_leaderid varchar2(5) REFERENCES STUDENT(st_no),
+       st_adid varchar2(6) REFERENCES ADVISOR(ad_id)
+ );
+
+--Create Project table
+CREATE TABLE Project
+ (
+      prj_no varchar2(3) PRIMARY KEY,
+      prj_name varchar2(15),
+      prj_duration number(2),
+      prj_platform varchar2(10),
+      prj_cost number      
+ );
+
+--Create StudentProject table
+ CREATE TABLE StudentProject
+ (
+        st_no varchar2(3) REFERENCES STUDENT(st_no),
+        prj_no varchar2(3) REFERENCES PROJECT(prj_no),
+        designation varchar2(10),
+        percentage number,
+        PRIMARY KEY (st_no,prj_no,designation)
+ );
+
+
+--Insert data into Advisor table
+
+INSERT INTO Advisor (ad_id,ad_name) VALUES ('A00011','daud che ngah');
+INSERT INTO Advisor (ad_id,ad_name) VALUES ('A00121','mohd kazim elias');
+INSERT INTO Advisor (ad_id,ad_name) VALUES ('A00238','muhayah latif');
+INSERT INTO Advisor (ad_id,ad_name) VALUES ('A01333','roslina ahmad');
+
+--Insert data into Student table
+INSERT INTO Student
+ (st_no,st_name,st_dob,st_enrol, st_cgpa,st_leaderid, st_adid)
+ VALUES ('ST7','SHIRAJ','04-JUN-82','12-FEB-2003',3.9,NULL, 'A00238');
+INSERT INTO Student
+ (st_no,st_name,st_dob,st_enrol,st_cgpa,st_leaderid, st_adid) 
+ VALUES ('ST6','SAMIRA','04-SEP-82','12-APR-2003',1.8,'ST7', 'A01333');
+INSERT INTO Student
+ (st_no,st_name,st_dob,st_enrol,st_cgpa,st_leaderid, st_adid) 
+ VALUES ('ST5','BAHAR','23-MAY-1983','12-MAR-2003',3.0,'ST6' , 'A00238');
+INSERT INTO Student
+ (st_no,st_name,st_dob,st_enrol,st_cgpa,st_leaderid, st_adid) 
+ VALUES ('ST1','DARWIN','15-AUG-1982','10-JAN-2003',3.5,'ST5','A00011');
+INSERT INTO Student
+ (st_no,st_name,st_dob,st_enrol,st_cgpa,st_leaderid, st_adid) 
+ VALUES ('ST2','RICHIE','20-AUG-1983','10-JAN-2003',2.2,'ST1', 'A00011');
+INSERT INTO Student
+ (st_no,st_name,st_dob,st_enrol,st_cgpa,st_leaderid, st_adid) 
+ VALUES ('ST3','LOUISA','15-MAR-1983','12-FEB-2003',2.6,'ST1' , 'A00121');
+INSERT INTO Student
+ (st_no,st_name,st_dob,st_enrol,st_cgpa,st_leaderid, st_adid) 
+ VALUES ('ST4','DHAVAL','11-MAY-1982','11-MAR-2003',3.3,'ST1' , 'A00121');
+
+
+--Insert data into Project table
+INSERT INTO Project
+ (prj_no,prj_name,prj_duration,prj_platform,prj_cost) VALUES ('P01','XYZ',6,'VB',65000);
+INSERT INTO Project
+ (prj_no,prj_name,prj_duration,prj_platform,prj_cost) VALUES ('P02','ABC',5,'JAVA',55000);
+INSERT INTO Project
+ (prj_no,prj_name,prj_duration,prj_platform,prj_cost) VALUES ('P03','LMN',6,'C++',68000);
+
+--Insert data into StudentProject table
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST1','P01','PROGRAMMER', 0.15);
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST2','P01','MANAGER',0.45);
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST3','P02','MANAGER',0.70);
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST4','P02','MANAGER',null);
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST5','P03','PROGRAMMER',0.20);
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST6','P03','MANAGER',0.65);
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST1','P03','PROGRAMMER',0.15);
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST1','P01','ANALYST',0.40);
+INSERT INTO StudentProject
+ (st_no,prj_no,designation,percentage) VALUES ('ST3','P02','ANALYST',0.30);

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<style>
+body {
+  background: #76b852; /* fallback for old browsers */
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+</style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Login</title>
+    </head>
+    <body>
+        <form method="post" action="validate.jsp">
+            <center>
+            <table border="1" cellpadding="5" cellspacing="2">
+                <thead>
+                    <tr><th colspan="2">Football Management System</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Username</td>
+                        <td><input type="text" name="username" required/></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="password" required/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" value="Login" />
+                            &nbsp;&nbsp;
+                            <input type="reset" value="Reset" /><br>
+			    Not registered? <a href="addaccount.html">Create an account</a></a> 
+                        </td>                        
+                    </tr>                    
+                </tbody>
+            </table>
+            </center>
+        </form>
+    </body>
+</html>

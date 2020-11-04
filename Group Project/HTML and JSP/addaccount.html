@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Create New Account</title>
+	
+</head>
+
+<body>
+	<div class= "form">
+		<center>
+		<form name="form" action="addaccount.jsp" method="post">
+		<h1> CREATE NEW ACCOUNT</h1>
+		<p>Please fill in this form to create an account</p>
+		
+		<label for="id"><b>Enter ID</b></label><br>
+		<input type="number" min="0" placeholder="Enter ID" name="id" required><br><br>
+		
+		<label for="username"><b>Username</b></label><br>
+	    	<input type="text" placeholder="Enter Username" name="username" required><br><br>
+		
+		<label for="repeatpass"><b>Email</b></label><br>
+		<input type="email" placeholder="Enter Email" name="email" required><br><br>
+		
+		<label for="password"><b>Password</b></label><br>
+		<input type="password" placeholder="Enter Password" name="password" required><br><br>
+		
+		<button type="submit" id="createaccbtn">Create Account</button>
+		<button type="button" id="cancelbtn"> Cancel </button>
+
+		<script type="text/javascript">
+    		document.getElementById("cancelbtn").onclick = function () {
+        	location.href = "login.html";
+		};
+		</script>
+		</form>
+		</center>
+	</div>
+</body>
+</html>

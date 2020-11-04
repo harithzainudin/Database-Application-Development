@@ -1,0 +1,95 @@
+<!Doctype html>
+<html>
+<style>
+.btn-group button {
+  background-color: #4CAF50; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+</style>
+
+<body>
+<center>
+<h1>FOOTBALL MANAGEMENT SYSTEM</h1>
+<h3>What do you want to do for today?</h3>
+</center>
+
+<div class="btn-group" style="width:100%">
+
+  <button type="button" id="registernewteam" style="width:33%">Register New Team</button>
+  <script type="text/javascript">
+  document.getElementById("registernewteam").onclick = function () {
+  location.href = "registernewteam.html";
+  };
+  </script>
+
+  <button type="button" id="insertnewgameplace" style="width:33%">Insert New Game Place</button>
+  <script type="text/javascript">
+  document.getElementById("insertnewgameplace").onclick = function () {
+  location.href = "insertnewgameplace.jsp";
+  };
+  </script>
+
+  <button type="button" id="insertnewvenue" style="width:33%">Insert New Venue</button>
+  <script type="text/javascript">
+  document.getElementById("insertnewvenue").onclick = function () {
+  location.href = "insertnewvenue.html";
+  };
+  </script>
+</div>
+
+<div class="btn-group" style="width:100%">
+  <button id="displayteamlist" style="width:33%">Display Team List</button>
+  <script type="text/javascript">
+  document.getElementById("displayteamlist").onclick = function () {
+  location.href = "displayteamlist.jsp";
+  };
+  </script>
+
+  <button id="displaygameplace" style="width:33%">Display Game Place</button>
+  <script type="text/javascript">
+  document.getElementById("displaygameplace").onclick = function () {
+  location.href = "displaygameplace.jsp";
+  };
+  </script>
+
+  <button id="displayvenuelist" style="width:33%">Display Venue List</button>
+  <script type="text/javascript">
+  document.getElementById("displayvenuelist").onclick = function () {
+  location.href = "displayvenuelist.jsp";
+  };
+  </script>
+
+</div>
+
+<center>
+<br>
+<br>
+<button type="button" id="logout">Logout</button>
+	<script type="text/javascript">
+	document.getElementById("logout").onclick = function () {
+	location.href = "login.html";
+	};
+	</script>
+</center>
+</body>
+</html>

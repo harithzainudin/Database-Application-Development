@@ -1,0 +1,61 @@
+<html>
+
+<head>
+<title>Register New Team</title>
+</head>
+ 
+<body>
+<h1 align="center" > REGISTER NEW TEAM </h1>
+<p align="center"> Please fill in this form to register a new team </p>
+ 
+<table align="center" cellpadding = "10">
+
+<form action="registernewteamvalidate.jsp">
+<!- Team Name ->
+<tr>
+<td>TEAM NAME</td>
+<td><input type="text" name="team_name" required/></td>
+</tr>
+
+<!-Coach Name ->
+<tr>
+<td>COACH'S NAME</td>
+<td><input type="text" name="coach_name" required/>
+</td>
+</tr>
+ 
+<!- Captains Name ->
+<tr>
+<td>CAPTAIN'S NAME</td>
+<td><input type="text" name="capt_name" maxlength="100" required/></td>
+</tr>
+ 
+<!- Number of Player ->
+<tr>
+<td>NUMBER OF PLAYER</td>
+<td>
+<input type="number" min="11" max="99" name="no_player" required/>
+</td>
+</tr>
+ 
+<!- Submit and Reset ->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+
+<button type="button" id="cancel">Cancel</button>
+<script type="text/javascript">
+document.getElementById("cancel").onclick = function () {
+location.href = "homepage.html";
+};
+</script>
+
+</td>
+</tr>
+</table>
+ 
+</form>
+	
+</body>
+</html>
